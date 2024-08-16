@@ -1,0 +1,20 @@
+config BR2_PACKAGE_USTREAMER
+	bool "ustreamer"
+	depends on BR2_TOOLCHAIN_GCC_AT_LEAST_5 # C++11 PR59526
+	depends on BR2_TOOLCHAIN_HAS_THREADS
+	select BR2_PACKAGE_LIBJPEG
+	select BR2_PACKAGE_JPEG
+	select BR2_PACKAGE_LIBEVENT
+	select BR2_PACKAGE_LIBBSD
+	help
+	  ustreamer是一个高性能的MJPEG视频流服务器。
+	  它设计轻量高效，适用于嵌入式系统和物联网设备。
+	  ustreamer使用libevent进行异步I/O操作，确保高性能和低延迟。
+	  
+	  主要特点：
+	  - 支持多种视频输入源
+	  - 可配置的视频参数（分辨率、帧率等）
+	  - 支持HTTP和WebSocket协议
+	  - 低CPU和内存占用
+
+	  https://github.com/pikvm/ustreamer
